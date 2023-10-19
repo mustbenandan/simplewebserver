@@ -24,61 +24,21 @@ Testing the webserver.
 ```
 from http.server import HTTPServer, BaseHTTPRequestHandler
 content = """
-
 <!DOCTYPE html>
 <html>
 <head>
 <title>My webserver</title>
 </head>
 <body>
-<h1 align="center"><b>Top 5 Revenue Companies</b></h1><br>
-    <table align="center" border="15" cellpadding="15" cellspacing="3">
-        <tr>
-            <th>Company name</th>
-            <th>Location</th>
-            <th>Yearly turn over</th>
-        </tr>
-        <tr>
-            <td><ul>
-                <li>Infosis</li>
-                <br>
-                <li>HCL</li>
-                <br>
-                <li>Wipro</li>
-                <br>
-                <li>Redington India Ltd</li>
-                <br>
-                <li>Tech Mahindra Limited</li>
-            </ul></td>
-            <td>
-                <ul>
-                    <li>chennai</li>
-                    <br>
-                    <li>chennai</li>
-                    <br>
-                    <li>chennai</li>
-                    <br>
-                    <li>chennai</li>
-                    <br>
-                    <li>chennai</li>
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    <li>123crore</li>
-                    <br>
-                    <li>1233crore</li>
-                    <br>
-                    <li>4165crore</li>
-                    <br>
-                    <li>4523crore</li>
-                    <br>
-                    <li>7456crore</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
+<h1>Top 5 Revenue Generating Software Companies<h1>
 </body>
+<ul>
+    <li>Accenture</li>
+    <li>HCL</li>
+    <li>Zoho</li>
+    <li>HP</li>
+    <li>GOOGLE</li>
+</ul>
 </html>
 """
 class myhandler(BaseHTTPRequestHandler):
@@ -88,15 +48,15 @@ class myhandler(BaseHTTPRequestHandler):
         self.send_header('content-type', 'text/html; charset=utf-8')
         self.end_headers()
         self.wfile.write(content.encode())
-server_address = ('',80)
+server_address = ('',8000)
 httpd = HTTPServer(server_address,myhandler)
 print("my webserver is running...")
-httpd.serve_forever()\
+httpd.serve_forever()
 ```
 
 ## OUTPUT:
-![Screenshot 2023-10-17 092210](https://github.com/mustbenandan/simplewebserver/assets/129033280/2dba6705-6efc-4f47-97d3-c4f8bd17f50a)
-
+![Screenshot 2023-10-19 155809](https://github.com/mustbenandan/simplewebserver/assets/129033280/096b8a5c-3496-4c6e-bf12-eb29d1362a3c)
+![Screenshot 2023-10-19 160117](https://github.com/mustbenandan/simplewebserver/assets/129033280/65009c4a-ceaf-4c35-9ff0-7b8e28c64522)
 
 
 ## RESULT:
